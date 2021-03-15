@@ -93,10 +93,14 @@ class MBConvN(nn.Module):
         return x
 
 class MBConv1(MBConvN):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, n_in, n_out, kernel_size = 3,
+                 strides = 1, r=24, p=0):
+        super().__init__(n_in, n_out, expansion_factor=1, kernel_size=kernel_size,
+                        stride=stride, r=r, p=p)
 
 class MBConv6(MBConvN):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, n_in, n_out, kernel_size = 3,
+                 strides = 1, r=24, p=0):
+        super().__init__(n_in, n_out, expansion_factor=6, kernel_size=kernel_size,
+                        stride=stride, r=r, p=p)
 
